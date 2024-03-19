@@ -1,0 +1,270 @@
+*{
+   margin: o;
+   padding: o; 
+}/*reseteado los estilos de codigos por defecto manejando toda la pag al 100%*/
+
+.container/*contenedor principal*/
+    {
+        position: relative;
+        width: 100vw;/*ancho*/
+        height: 100vw;/*alto*/
+        background: #f3f3fc;/*color de fondo*/
+    }
+.texto /*estilo al texto del cuadro*/
+    {
+        position: absolute;
+        width: 42%;/*ancho*/
+        height: 30%;/*alto*/
+        left: 10%;/*espacio lado izquierdo*/
+        top: 4%;/*espacio superior*/
+        border: none;/*tamaño de los bordes*/
+        font-family: "Segoe UI";/*tipo de letra*/
+        font-style: italic;/*forma de la letra negrilla, curva..*/
+        font-weight: 700;/*peso de la letra*/
+        font-size: 30px;/*tamaño de la letra*/
+        line-height: 130%;/*espacios interlineados*/
+        background-color: rgb(234, 220, 220);
+    }
+
+/*se accede a las propiedades internas con ::*/
+.texto::placeholder
+    {
+        font-family: "Segoe UI";/*tipo de letra*/
+        font-style: italic;/*forma de la letra*/
+        color: red;/*color de la letra*/
+    } 
+
+.texto:focus,/*cuando esta quieto*/
+.texto:active/*cuando esta activo*/
+    {
+        border: none;/*borde del cuadro*/
+        outline: none;/*dentro de la linea*/
+    }
+
+.terminos /*letrero minuscula la cuadricula donde esta la letra*/
+    {
+        display: flex;/*que sea flexible*/
+        flex-direction: row;/*direccion fina*/
+        align-items: center;/*alinear al centro*/
+        padding: 0px;/*posiciona ambos arriba-abajo y lados*/
+        gap: 40px;/*espaciamiento interno*/
+        position: absolute;
+        width: 80%;/*ancho*/
+        left: 12%;/*lado izq*/
+        top: 35%;/*espacio entre la frase y el cuadro de texto desde arriba*/
+    }
+
+.terminos p/*letrero en minuscula*/
+    {
+        font-family: "Segoe UI";/*para que herede del padre caracteristicas*/
+        font-style: normal;/*forma de la letra*/
+        font-weight: 700;/*entre mas grande el peso mas negra la letra*/
+        font-size: 18px;/*tamaño de la letra*/
+        line-height: 30%;/*espacio entre la box y las letras*/
+        color: black;/*color de la letra*/
+        opacity: 1;
+        flex: none;/*porque el padre es flexible*/
+        order: 1;
+        flex-grow: 0;
+    }
+
+.botones /*contenedor de los botones*/
+    {
+        display: flex;/*crea que el box sea flexible a programar*/
+        flex-direction: row;/*coloca un boton al lado del otro en fila horizontal*/
+        align-items: flex-start;/*alineacion de items al incio*/
+        padding: 1% 0;/*posiciona ambos arriba-abajo y lados*/
+        position: absolute;
+        width: 80%;/*ancho*/
+        left: 12%;/*izq*/
+        top: 38%;/*espacio entre el anterior texto y este*/
+
+    }
+.btn-encriptar /*boton de encriptar*/
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;/*el contenido se justicique ..al centro*/
+        padding: 3%;/*curvas de las esquinas lados*/
+        gap: 8px;/*espaciamiento entre items*/
+        width: 25%;
+        background-color: rgb(180, 34, 34);
+        border-radius: 24px;
+        font-family: "Segoe UI";
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 5px;/*ancho de linea*/
+        text-align: center;
+        color: white;
+    }
+
+.btn-desencriptar /*boton de desencriptar*/
+    {
+        box-sizing: border-box;/*tamaño de caja se va a mantener estable*/
+        display: flex;/*indica la capacidad de un elemento 
+        flexible para alterar sus dimensiones y llenar un espacio*/
+        flex-direction: row;/*posicion de los box*/
+        align-items: flex-start;/*items se alinien al inicio*/
+        justify-content: center;
+        padding: 3%;/*área de relleno en los cuatro */
+        gap: 8px;/*espacio interno*/
+        width: 25%;/*establece el ancho del área de un contenido*/
+        background: rgb(223, 202, 202);
+        border: 1px solid  rgb(180, 34, 34);/*grosor del cuadro */
+        border-radius: 24px; /*curvatura de las puntas*/
+        font-family: "Segoe UI";
+        font-weight: 700;/*400 letra normal 700 letra negrita*/
+        font-size: 18px;/*tamaño de la letra*/
+        line-height: 8px;/*tamaño de la linea del cuadro*/
+        text-align: center;
+        color: red;
+    }
+/*cuadro de animacion al tacto de movil*/
+.btn-desencriptar:hover,
+.btn-encriptar:hover
+    {
+        margin: 0.3%;/*crecer el cuadro*/
+        width: 25.5%;/*tamano al crecer*/
+        padding: 2.8%;/*al crecer*/
+    }
+
+/*cuadro del lado con imagen*/
+.encriptado
+    {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 30%;
+        height: 40%;
+        left: 60%;/*se suma el espacio anterior 12% y el box 42% se agrega especio entre los 2*/
+        top:4%;
+        background: #ede8e8;
+        box-shadow: 0px 24px 32px -8px rgb(from 0 0 0 0.08);/*sombra a un lado no tiene left 24 abajo 32 izquierdo menos 8 color*/
+        border-radius: 3%;/*curvas esquinas*/
+    }/*sombra en manecillas del reloj*/
+
+.mensaje-encriptado
+    {
+        display:flex ;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1%;/*espacio interno entre sup y la frase*/
+        gap: 16px;/*espacio entre letras*/
+        position: absolute;
+        width: 100%;/*espacio usado dentro del cuadro para la frase*/
+        top:65%;/*espacio repartido de los elemtos en el box*/
+        text-align: center;
+    }
+
+/*padre hereda el hijo h2*/
+.mensaje-encriptado h2
+    {
+        width: 60%;/*espacio que ocupa en el cuadro la letra lado a lado horizontalmente*/
+        font-family: "Segoe UI";
+        font-style: italic;
+        font-weight: 700;/*grosor de la negrilla*/
+        font-size: 24px;/*tamaño de la letra*/
+        line-height: 120%;/*espacio entre la frase*/
+        text-align: center;
+        color: red;
+    }
+
+.mensaje-encriptado p
+    {
+        width: 80%;
+        font-family: oblique bold 120% cursive;
+        font-style: normal;
+        font-weight: 700;/*grosor de la negrilla*/
+        font-size: 16px;/*tamaño de la letra*/
+        line-height: 50%;/*espacio entre la frase*/
+        text-align: center;
+        color: red;
+    }
+
+/*estilo a la img*/
+.encriptado img
+    {
+        position: absolute;/*posisicion*/
+        width: 80%;/*ancho*/
+        height: 50%;  /*alto*/ 
+        top: 15%;/*espacio entre la img y el box*/  
+    }
+
+/*responsive desing*/
+/*cuando supere este tamaño cambia*/
+@media (max-width:57.5em){
+    .container
+        {
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+        }/*hacer estos cambios cuando supere e tamaño anterior*/
+    .encriptar
+        {
+            width: 80%;/*ancho*/
+        }
+    .texto
+        {
+            width: 80%;
+            height: 70%;
+            font-size: 12px;/*tamaño letra*/
+            left: 5%;
+            top: 3%;
+        }
+    .terminos
+        {
+            width: 60%;/*ancho*/
+            height: 22%;
+            left: 5%;
+            top: 67%;
+        }
+    .terminos p
+        {
+            font-size: 8px;
+
+        }
+    .botones
+        {
+            width: 60%;
+            left: 5%;
+            top: 80%;
+        }
+    .btn-desencriptar, .btn-encriptar
+        {
+            width:60%;/*tamaño de la caja*/
+            border-radius: 16px;
+            font-size: 8px;
+        }
+    .btn-desencriptar:hover, .btn-encriptar:hover
+        {
+            margin: 0.3%;
+            width: 48.5%;
+            padding: 1.8%;
+        }
+    .encriptado
+        {
+          width: 80%;
+          height: 65%;/*tamaño del box*/
+          left: 5%;
+          top: 100%;  
+        }
+    
+        .mensaje-encriptado
+            {
+                width: 100%;
+                top: 2%;
+            } 
+        
+        .encriptado img
+            {
+                top: 0;
+                display: none;
+                visibility: hidden;/*no se muestre la imagen*/
+            } 
+             
+    
+}
+    
+

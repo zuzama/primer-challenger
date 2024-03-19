@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-cpmpatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+    <title>Pagina Encriptada</title>
+    <link rel="shortcut icon" href="img/Logo.jpg" type="image/x-icon"><!--icono del nombre principal de la pagina-->
+    <link rel="stylesheet" href="style.css"><!--llamar la pagina css -->
+    <script scr="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><!--llamar la pagina de alertas esteticos desde internet -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="encriptar">
+            <textarea name="texto" class="texto" id="texto" cols="30" rows="10" placeholder="Ingresa el texto a encriptar"></textarea>
+                        <!--cols #de columnas rows # de filas -->
+        
+            <div class="terminos">
+                <p>Solo letras minúsculas y sin acentos por favor.</p>
+            </div>
+
+            <div class="botones"><!--contiene los botones -->
+                <input type="button" class="btn-encriptar"  value="ENCRIPTAR" onclick="encriptar ()"><br>
+                <br><input type="button" class="btn-desencriptar" value="DESENCRIPTAR" onclick="desencriptar ()">
+            </div>
+        </div>
+            <!--contiene las imagenes -->
+        <div class="encriptado">
+
+            <img src="img/pensando.img" alt="" id="muneco">
+
+            <div class="mensaje-encriptado" id="mensaje-encriptado">
+                <h2 id="titulo-mensaje">No encontramos ningún mensaje para encriptar</h2>
+                <p id="parrafo">Ingrese el texto que deseas encriptar o desencriptar</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script><!--llamar la pagina java-->
